@@ -26,6 +26,7 @@
         { text: 'Age: ', icon: 'mdi-alarm', id: 'age'},
         { text: 'Sex: ', icon: 'mdi-human-male-female', id: 'sex'},
         { text: 'Job: ', icon: 'mdi-briefcase', id: 'job'},
+        { text: 'Email: ', icon: 'mdi-mail', id: 'email'},
         { text: 'Login: ', icon: 'mdi-account-box', id: 'login'},
         { text: 'Password: ', icon: 'mdi-lock', id: 'password'},
       ],

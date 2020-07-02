@@ -8,7 +8,7 @@
   position: relative;
   width: 80px;
   height: 80px;
-  margin: calc(50vh - 86px) auto;
+  margin: 35vh auto auto auto;
 }
 .lds-facebook div {
   display: inline-block;

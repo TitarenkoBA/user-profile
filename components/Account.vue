@@ -16,7 +16,7 @@
       </v-list-item>
 
       <v-img
-        src="https://cdn.vuetifyjs.com/images/cards/mountain.jpg"
+        :src="user.img || ''"
         height="194"
       ></v-img>
 
