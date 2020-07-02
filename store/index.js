@@ -36,10 +36,6 @@ export const state = () => ({
 export const mutations = {
   login(state, user) {
     state.currentUser = { ...user }
-    state.error = {
-      isError: false,
-      message: ''
-    }
   },
   logout(state) {
     state.currentUser = null
@@ -58,19 +54,18 @@ export const mutations = {
 export const actions = {
   login(store, user) {
     store.commit('loading', true)
-    setTimeout(() => {
-      const searchingUser = store.state.users.find(el => {
-        return el.login === user.login && el.password === user.password
-      })
-      if (searchingUser) {
-        store.commit('login', searchingUser)
-        this.$router.push('/profile')
-        store.commit('loading', false)
-      } else {
-        store.commit('loading', false)
-        store.commit('error', { isError: true, message: 'Wrong login or password!' })
-      }
-    }, 2000)
+    const searchingUser = store.state.users.find(el => {
+      return el.login === user.login && el.password === user.password
+    })
+    if (searchingUser) {
+      store.commit('error', { isError: false, message: '' })
+      store.commit('login', searchingUser)
+      this.$router.push('/profile')
+      setTimeout(() => {store.commit('loading', false)}, 2000)
+    } else {
+      store.commit('error', { isError: true, message: 'Wrong login or password!' })
+      setTimeout(() => {store.commit('loading', false)}, 2000)
+    }
   },
   logout(store) {
     this.$router.push('/')

@@ -58,7 +58,7 @@ export default {
   },
   beforeMount() {
       if (!this.user) {
-        this.$store.dispatch('error', {isError: true, message: 'You must be login to see this page'})
+        this.$store.dispatch('error', {isError: true, message: 'You must be logged to see this page'})
       }
     }
 }
